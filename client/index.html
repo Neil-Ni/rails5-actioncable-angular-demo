@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+  <script src="bower_components/angular-websocket/angular-websocket.js"></script>
+  <script src="bower_components/angular-actioncable/dist/angular-actioncable.js"></script>
+</head>
+<body ng-app="app">
+  <section ng-controller="SomeController">
+    <ul>
+      <li ng-repeat="datum in myData">
+        {{ datum }}
+      </li>
+    </ul>
+    <input ng-model="inputText" /><button ng-click="sendToMyChannel(inputText)">Send</button>
+  </section>
+  <script>
+    angular.module('app', [
+      'ngActionCable'
+    ])
+    .run(function (ActionCableConfig){
+      ActionCableConfig.wsUri = "ws://localhost:3000/cable";
+      ActionCableConfig.debug = true;
+      ActionCableConfig.autoStart = true;
+    })
+    .controller('SomeController', function ($scope, ActionCableChannel, ActionCableSocketWrangler){
+      if (!ActionCableSocketWrangler.connected()) ActionCableSocketWrangler.start();
+
+      $scope.inputText = "";
+      $scope.myData = [];
+
+      // connect to ActionCable
+      var consumer = new ActionCableChannel("ChatChannel", {user: 42, chat: 37});
+      var callback = function(message) {
+        console.log(message);
+        $scope.myData.push(message);
+      };
+      consumer.subscribe(callback).then(function(){
+        $scope.sendToMyChannel = function(message){
+          consumer.send(message);
+        };
+        $scope.$on("$destroy", function(){
+          consumer.unsubscribe().then(function(){ $scope.sendToMyChannel = undefined; });
+        });
+      });
+
+    });
+  </script>
+</body>
+</html>
