@@ -37,9 +37,9 @@
       // connect to ActionCable
       var consumer = new ActionCableChannel("ChatChannel", {user: 42, chat: 37});
       var callback = function(message) {
-        console.log(message);
         $scope.myData.push(message);
       };
+
       consumer.subscribe(callback).then(function(){
         $scope.sendToMyChannel = function(message){
           consumer.send(message);
