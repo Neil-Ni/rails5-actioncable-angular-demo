@@ -36,3 +36,7 @@ The server directory is a rails scaffolded repo. You might want to checkout the 
 [angular-actioncable](https://github.com/angular-actioncable/angular-actioncable)
 
 Another github project that uses actioncable and react: [repo](https://github.com/deploysage/deploysage)
+
+## License
+
+MIT
