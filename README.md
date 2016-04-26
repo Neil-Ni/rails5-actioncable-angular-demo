@@ -4,38 +4,42 @@ This is a sample running demo project to show how to set up Rails Actioncable an
 
 ## Start
 
-```
 
-    #install rails dependencies
-    cd server && bundle install
+#### Install Rails dependencies
+ - `cd server && bundle install`
 
-    #install angular dependencies
-    cd client && bower install
+#### Install Angular dependencies
+ - `cd client && bower install`
 
-    #start rails server
-    cd server && rails s
-    
-    open index.html in your chrome browser
+#### Start Rails server
+ - `cd server && rails server`
 
-```
+#### Navigate to the application
+ - Open index.html in your Firefox browser
+   * `file:///home/` _(navigate to client/index.html)_
+ - Open index.html in your Chrome browser
+   * `file:///home/` _(navigate to client/index.html)_
+
+###### Send messages live!
+
 
 ## Codebase Quick Start
 
-The server directory is a rails scaffolded repo. You might want to checkout the channel code [here](https://github.com/Neil-Ni/rails5-actioncable-angular-demo/blob/master/server/app/channels/chat_channel.rb#L1-L19) and see how it corresponds to frontend code [here](https://github.com/Neil-Ni/rails5-actioncable-angular-demo/blob/master/client/index.html#L38-L50)
+The server directory is a rails scaffolded repo. You might want to checkout the [channel code](https://github.com/Neil-Ni/rails5-actioncable-angular-demo/blob/master/server/app/channels/chat_channel.rb#L1-L19) and see how it corresponds to the [frontend code](https://github.com/Neil-Ni/rails5-actioncable-angular-demo/blob/master/client/index.html#L38-L50)
 
 
 ## TODO
 
-- add example on how to authenticatate
+- add example on how to authenticate
 
 
-##Related Links
+## Related Links
 
 [rails actioncable](https://github.com/rails/rails/tree/master/actioncable)
 
 [angular-actioncable](https://github.com/angular-actioncable/angular-actioncable)
 
-Another github project that uses actioncable and react: [repo](https://github.com/deploysage/deploysage)
+A [github project](https://github.com/deploysage/deploysage) that uses actioncable and react
 
 ## License
 
