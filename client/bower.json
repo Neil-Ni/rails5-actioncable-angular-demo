@@ -15,7 +15,7 @@
   "homepage": "https://github.com/Neil-Ni/rails5-actioncable-angular-demo",
   "dependencies": {
     "angular-websocket": "^1.1.0",
-    "angular-actioncable": "~0.0.6"
+    "angular-actioncable": "~0.0.7"
   },
   "devDependencies": {}
 }
