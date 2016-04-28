@@ -20,6 +20,22 @@
       </ul>
       <input ng-model="inputText" /><button ng-click="sendToMyChannel(inputText)">Send</button>
     </section>
+    <br />
+    <section>
+      <div ng-controller="StatusController">
+        <h4>
+          <span ng-show="status.connected()">Connected</span>
+          <span ng-show="status.disconnected()">Disconnected</span>
+          <span ng-show="status.connecting()">Connecting......</span>
+        </h4>
+        <div>
+          You can
+          &quot;<kbd>Ctrl+c</kbd>&quot; + &quot;<kbd>rails s</kbd>&quot; and &quot;<kbd>Ctrl+z</kbd>&quot; + &quot;<kbd>fg 1</kbd>&quot;
+          the server to see how it affects client states over time.
+          Each client will maintain one and only one open connection and multiple clients will reconnect at slightly different times on server restart.
+        </div>
+      </div>
+    </section>
     <script>
       angular.module('app', [
         'ngActionCable'
@@ -45,6 +61,9 @@
           });
         });
 
+      })
+      .controller('StatusController', function($scope, ActionCableSocketWrangler){
+        $scope.status= ActionCableSocketWrangler;
       });
     </script>
   </body>
