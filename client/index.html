@@ -24,9 +24,9 @@
     <section>
       <div ng-controller="StatusController">
         <h4>
-          <span ng-show="status.connected()">Connected</span>
-          <span ng-show="status.disconnected()">Disconnected</span>
-          <span ng-show="status.connecting()">Connecting......</span>
+          <span ng-show="status.connected">✓ Connected</span>
+          <span ng-show="status.disconnected">✘ Disconnected</span>
+          <span ng-show="status.connecting">✘ Connecting......</span>
         </h4>
         <div>
           You can
