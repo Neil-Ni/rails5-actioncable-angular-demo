@@ -15,10 +15,7 @@ This is a sample running demo project to show how to set up Rails Actioncable an
  - `cd server && rails server`
 
 #### Navigate to the application
- - Open index.html in your Firefox browser
-   * `file:///home/` _(navigate to client/index.html)_
- - Open index.html in your Chrome browser
-   * `file:///home/` _(navigate to client/index.html)_
+ - Open `http://localhost:3000` in your favourite browser
 
 ###### Send messages live!
 
@@ -26,7 +23,6 @@ This is a sample running demo project to show how to set up Rails Actioncable an
 ## Codebase Quick Start
 
 The server directory is a rails scaffolded repo. You might want to checkout the [channel code](https://github.com/Neil-Ni/rails5-actioncable-angular-demo/blob/master/server/app/channels/chat_channel.rb#L1-L19) and see how it corresponds to the [frontend code](https://github.com/Neil-Ni/rails5-actioncable-angular-demo/blob/master/client/index.html#L38-L50)
-
 
 ## TODO
 
@@ -41,6 +37,10 @@ The server directory is a rails scaffolded repo. You might want to checkout the 
 
 A [github project](https://github.com/deploysage/deploysage) that uses actioncable and react
 
+## Is it any good?
+
+[Yes](http://news.ycombinator.com/item?id=3067434)
+
 ## License
 
-MIT
+[MIT](https://github.com/Neil-Ni/rails5-actioncable-angular-demo/blob/master/LICENSE)
