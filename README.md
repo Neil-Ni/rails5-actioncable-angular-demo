@@ -1,6 +1,6 @@
 # Rails Actioncable + Angular Demo
 
-This is a sample running demo project to show how to set up Rails Actioncable and wire up with angular frontend.
+This is a sample running demo project to show how to set up Rails Actioncable and wire up with an Angular frontend.
 
 ## Start
 
@@ -22,7 +22,7 @@ This is a sample running demo project to show how to set up Rails Actioncable an
 
 ## Codebase Quick Start
 
-The server directory is a rails scaffolded repo. You might want to checkout the [channel code](https://github.com/Neil-Ni/rails5-actioncable-angular-demo/blob/master/server/app/channels/chat_channel.rb#L1-L19) and see how it corresponds to the [frontend code](https://github.com/Neil-Ni/rails5-actioncable-angular-demo/blob/master/client/index.html#L38-L50)
+The server directory is a rails scaffolded repo. You might want to checkout the [channel code](https://github.com/Neil-Ni/rails5-actioncable-angular-demo/blob/master/server/app/channels/chat_channel.rb#L1-L19) and see how it corresponds to the [frontend code](https://github.com/Neil-Ni/rails5-actioncable-angular-demo/blob/master/client/index.html#L50-L61)
 
 ## TODO
 
